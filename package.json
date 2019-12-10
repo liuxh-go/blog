@@ -8,7 +8,11 @@
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "我是好孩子",
+    "wshhz",
+    "我是好孩子的主页"
+  ],
+  "author": "wshhz",
   "license": "ISC"
 }
