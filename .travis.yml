@@ -10,6 +10,7 @@ cache:
   yarn: true
 before_install:
   - export TZ='Asia/Shanghai'  # 设置时区
+  - npm install -g vuepress
 install:
   - yarn
 script:
