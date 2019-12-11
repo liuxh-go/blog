@@ -1,6 +1,6 @@
 module.exports = [
     {
-        title: '博客',
+        title: '区块链',
 
         // 子项
         children: [
