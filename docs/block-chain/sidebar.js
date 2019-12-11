@@ -4,7 +4,7 @@ module.exports = [
 
         // 子项
         children: [
-            'block-chain'
+            'first'
         ]
     }
 ]

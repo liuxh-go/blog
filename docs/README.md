@@ -4,7 +4,7 @@ heroImage: /favicon.ico
 actionText: 开始阅读 →
 actionLink: /blog/
 features:
-- title: 博客
+- title: 随笔
   details: 平时的一些积累，一些采坑记录以及学习笔记。
 - title: 算法和数据结构
   details: 算法和数据结构学习。

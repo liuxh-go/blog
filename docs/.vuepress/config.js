@@ -48,7 +48,7 @@ module.exports = {
 
     // 导航栏配置
     nav:[
-      {text: '博客', link: '/blog/' },
+      {text: '随笔', link: '/blog/' },
       {text: '算法和数据结构', link: '/algo-data/' },
       {text: 'Go', link: '/go/' },
       {text: '区块链', link: '/block-chain/'},
