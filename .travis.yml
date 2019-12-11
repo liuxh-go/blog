@@ -10,8 +10,8 @@ cache:
   yarn: true
 before_install:
   - export TZ='Asia/Shanghai'  # 设置时区
-install:
-  - npm
+# install:
+#   - npm
 script:
   - npm run build
 deploy:
