@@ -3,6 +3,9 @@ module.exports = {
   title: '我是好孩子的主页',
   description: '欢迎访问我的主页',
 
+  // 语言
+  lang: 'zh-CN',
+
   // 注入到当前页面的 HTML <head> 中的标签
   head: [
     // 增加一个自定义的 favicon(网页标签的图标)
@@ -22,13 +25,33 @@ module.exports = {
   },
 
   themeConfig: {
+    // 你的GitHub仓库，请正确填写
+    repo: 'wshhz/blog',
+
+    // 自定义仓库链接文字。
+    repoLabel: 'GitHub',
+
+    // 最后更新时间
+    lastUpdated: '更新时间',
+
+    // 刷新弹窗
+    serviceWorker: {
+        // Boolean | Object, 默认值是 undefined.
+        updatePopup: true,
+
+        // 如果设置为 true, 默认的文本配置将是:
+        updatePopup: {
+            message: "有新内容",
+            buttonText: "刷新"
+        }
+    },
+
     // 导航栏配置
     nav:[
       {text: '博客', link: '/blog/' },
       {text: '算法和数据结构', link: '/algo-data/' },
       {text: 'Go', link: '/go/' },
       {text: '区块链', link: '/block-chain/'},
-      {text: 'Github', link: 'https://github.com/wshhz'},
       {text: '关于', link: '/about/about'}
     ],
 
