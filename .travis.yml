@@ -10,10 +10,10 @@ cache:
   yarn: true
 before_install:
   - export TZ='Asia/Shanghai'  # 设置时区
-# install:
-#   - npm
+install:
+  - yarn
 script:
-  - npm run dev
+  - yarn docs:build
 deploy:
   provider: pages
   skip-cleanup: true
