@@ -1,9 +1,10 @@
 module.exports = [
     {
-        title: '数据结构与算法',
-        children: {
-             '算法': require("./algo/sidebar"),
-             '数据结构': require("./data/sidebar")
-        }
+        title: '数据结构',
+        children: require("./data/sidebar")
+    },
+    {
+        title: '算法',
+        children: require("./algo/sidebar")
     }
 ]
