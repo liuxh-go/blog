@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /favicon.ico
+heroImage: /lf.jpeg
 actionText: 开始阅读 →
 actionLink: /blog/
 features:
