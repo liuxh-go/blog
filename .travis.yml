@@ -15,12 +15,12 @@ install:
   - yarn
 script:
   - yarn docs:build
-deploy:
-  provider: pages
-  skip-cleanup: true
-  github-token: ${Travis}
-  local-dir: ./docs/.vuepress/dist/ ## 根据情况自定义到静态文件输出目录
-  target-branch: gh-pages
-  verbose: true
-  on:
-    branch: master
+# deploy:
+#   provider: pages
+#   skip-cleanup: true
+#   github-token: ${Travis}
+#   local-dir: ./docs/.vuepress/dist/ ## 根据情况自定义到静态文件输出目录
+#   target-branch: gh-pages
+#   verbose: true
+#   on:
+#     branch: master
