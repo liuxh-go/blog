@@ -9,7 +9,7 @@ module.exports = {
   // 注入到当前页面的 HTML <head> 中的标签
   head: [
     // 增加一个自定义的 favicon(网页标签的图标)
-    ['link', { rel: 'icon', href: '/logo.jpg' }],
+    ['link', { rel: 'icon', href: '/lf.jpeg' }],
   ],
 
   // 这是部署到github相关的配置
