@@ -14,3 +14,4 @@
 * [vuepress](https://vuepress.docschina.org/)基于vue的个人博客搭建框架
 * [Markdown](http://xianbai.me/learn-md/index.html)Markdown文档语法
 * [vue](https://cn.vuejs.org/)前端框架
+* [Travis](https://travis-ci.org/)自动化代码测试发布平台
