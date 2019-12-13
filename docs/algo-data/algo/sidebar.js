@@ -1,8 +1,14 @@
 module.exports = [
     {
-        title: '算法',
+        title: '查找算法',
         children: [
-            './algo/first'
+            './algo/find/normal'
         ]
-    }
+    },
+    {
+        title: '排序算法',
+        children: [
+            './algo/sort/normal'
+        ]
+    },
 ]
