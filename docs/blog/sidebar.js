@@ -14,12 +14,8 @@ module.exports = [
             },
             {
                 title: '每日一记',
-
-                // 子项中的小项(指向的是对应的md文件)
-                children: [
-                    './2019/12/16'
-                ]
-            }
+                children: require("./day-day-note/sidebar")
+            },
         ]
     }
 ]

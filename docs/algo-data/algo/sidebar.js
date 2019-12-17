@@ -1,14 +1,15 @@
 module.exports = [
     {
-        title: '查找算法',
+        title: '排序算法',
         children: [
-            './algo/find/normal'
+            './algo/sort/fore-word',
+            './algo/sort/normal',
         ]
     },
     {
-        title: '排序算法',
+        title: '查找算法',
         children: [
-            './algo/sort/normal'
+            './algo/find/normal'
         ]
     },
 ]
