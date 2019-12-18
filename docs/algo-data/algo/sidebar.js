@@ -12,4 +12,10 @@ module.exports = [
             './algo/find/normal'
         ]
     },
+    {
+        title: '一些有趣的算法',
+        children: [
+            './algo/other/rand-array'
+        ]
+    },
 ]
