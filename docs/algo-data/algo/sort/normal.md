@@ -232,7 +232,125 @@ func insertSort(data []int, gap, count int) {
 * 插入排序使用常数级的额外空间,所以空间复杂度为S(n)=O(1)
 * 最好情况T(n)=O(nlog^2n ),最坏T(n)=O(nlog^2n),平均情况T(n)=O(nlogn)
 
-## 六、桶排序
+## 六、堆排序
+
+### 思路
+
+使用堆积的特性(根节点的值大于或小于任一子节点的值),将待排序序列构建成堆,然后依次取出堆顶的值,最终得到一个有序的序列
+
+### 排序过程(以升序即从小到大顺序排列)
+
+0. 将待排序序列构建成一个堆,初始化i=0
+1. 将R[i,n)调整为小顶堆,此时R[0,i)为有序区,R[i,n)为无序区
+2. i增加1,从`1`步骤重复,直到i=n
+3. 完成排序
+
+### 示例代码
+
+```go
+func (this *Heap) Sort() {
+	for i := 0; i < len(this.data); i++ {
+		this.adjustHeap(i)
+	}
+}
+
+func (this *Heap) adjustHeap(start int) {
+	data := this.data[start:]
+	l := len(data)
+	if l <= 0 {
+		return
+	}
+
+	// 小顶堆:满足公式 R[i] < R[2*i+1] && R[i] < R[2*i+2]
+	for i := l/2 - 1; i >= 0; i-- {
+		minIndex := i
+
+		if 2*i+1 < l && data[2*i+1] < data[minIndex] {
+			minIndex = 2*i + 1
+		}
+
+		if 2*i+2 < l && data[2*i+2] < data[minIndex] {
+			minIndex = 2*i + 2
+		}
+
+		if minIndex != i {
+			data[i], data[minIndex] = data[minIndex], data[i]
+		}
+	}
+}
+```
+[完整代码](https://github.com/wshhz/algoAndData/blob/master/algo/sort/heap.go)
+
+### 性能分析
+
+* 不稳定排序
+* 内排序
+* 堆排序使用常数级的额外空间,所以空间复杂度为S(n)=O(1)
+* 最好情况T(n)=O(nlogn ),最坏T(n)=O(nlogn),平均情况T(n)=O(nlogn)
+
+## 七、归并排序
+
+### 思路
+
+归并排序采用分治法,先将待排序序列拆分成小序列,分别对小序列进行排序后合并小序列为大序列,最终合并成完整的有序序列
+
+### 排序过程(以升序即从小到大顺序排列)
+
+0. 将长度为n的序列拆分为两个长度为n/2的序列
+1. 分别对长度为n/2的序列进行排序
+2. 将排序后的两个序列进行合并得到长度为n的有序序列
+3. 递归从`0`步骤开始调用,直到序列无法拆分为止
+4. 完成排序
+
+### 示例代码
+
+```go
+func (this *Merge) Sort() {
+	this.data = mergeSort(this.data)
+}
+
+func mergeSort(slice []int) []int {
+	l := len(slice)
+	if l < 2 {
+		return slice
+	}
+
+	return merge(mergeSort(slice[:l/2]), mergeSort(slice[l/2:]))
+}
+
+// 合并有序数组
+func merge(sliceOne, sliceTwo []int) []int {
+	totalLen := len(sliceOne) + len(sliceTwo)
+	result := make([]int, totalLen)
+	for i, j, k := 0, 0, 0; k < totalLen; k++ {
+		if i >= len(sliceOne) {
+			result[k] = sliceTwo[j]
+			j++
+		} else if j >= len(sliceTwo) {
+			result[k] = sliceOne[i]
+			i++
+		} else if sliceOne[i] < sliceTwo[j] {
+			result[k] = sliceOne[i]
+			i++
+		} else {
+			result[k] = sliceTwo[j]
+			j++
+		}
+	}
+
+	return result
+}
+```
+[完整代码](https://github.com/wshhz/algoAndData/blob/master/algo/sort/merge.go)
+
+### 性能分析
+
+* 稳定排序
+* 内排序
+* 归并排序需要使用额外的辅助,所以空间复杂度为S(n)=O(n)
+* 最好情况T(n)=O(nlogn ),最坏T(n)=O(nlogn),平均情况T(n)=O(nlogn)
+
+## 八、计数排序
 
 ### 思路
 
@@ -250,7 +368,7 @@ func insertSort(data []int, gap, count int) {
 
 // TODO
 
-## 七、基数排序
+## 九、桶排序
 
 ### 思路
 
@@ -268,43 +386,7 @@ func insertSort(data []int, gap, count int) {
 
 // TODO
 
-## 八、归并排序
-
-### 思路
-
-// TODO
-
-### 排序过程(以升序即从小到大顺序排列)
-
-// TODO
-
-### 示例代码
-
-// TODO
-
-### 性能分析
-
-// TODO
-
-## 九、计数排序
-
-### 思路
-
-// TODO
-
-### 排序过程(以升序即从小到大顺序排列)
-
-// TODO
-
-### 示例代码
-
-// TODO
-
-### 性能分析
-
-// TODO
-
-## 十、堆排序
+## 十、基数排序
 
 ### 思路
 
