@@ -6,6 +6,7 @@ module.exports = [
             './day-day-note/2019/12/17',
             './day-day-note/2019/12/18',
             './day-day-note/2019/12/19',
+            './day-day-note/2019/12/20',
         ]
     },
 ]
